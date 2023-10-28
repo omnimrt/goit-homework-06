@@ -54,6 +54,69 @@
             </li>
           </ul>
         </address>
+        <button type="button" class="menu-open-btn">0</button>
+      </div>
+      <div class="mob-menu is-open">
+        <div>
+          <button type="button" class="menu-close-btn">X</button>
+          <ul class="mob-list">
+            <li class="mob-item">
+              <a class="mob-link" href="./index.html">Studio</a>
+            </li>
+            <li class="mob-item">
+              <a class="mob-link" href="">Portfolio</a>
+            </li>
+            <li class="mob-item">
+              <a class="mob-link" href="">Contacts</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <address class="mob-address-info">
+            <ul class="mob-address-list">
+              <li>
+                <a class="mob-address-item" href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li>
+                <a class="mob-address-item" href="tel:+110001111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+            </ul>
+          </address>
+          <ul class="mob-soc-list">
+            <li class="soc-icons-item">
+              <a href="" class="social-link">
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-instagram-2"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="soc-icons-item">
+              <a href="" class="social-link">
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-twitter-1"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="soc-icons-item">
+              <a href="" class="social-link">
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-facebook-1"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="soc-icons-item">
+              <a href="" class="social-link">
+                <svg class="soc-icon" width="24" height="24">
+                  <use href="./images/icons.svg#icon-linkedin-1"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
 
@@ -63,8 +126,8 @@
       <!-- Hero section -->
 
       <section class="hero">
-        <div class="container">
-          <h1 class="hero-title">Effective Solutions for Your Business</h1>
+        <div class="hero-container container">
+          <h1 class="hero-title">Effective Solutions For Your Business</h1>
           <button class="button" type="button">Order Service</button>
         </div>
       </section>
@@ -135,6 +198,10 @@
           <ul class="our-team-list">
             <li class="our-team-item">
               <img
+                srcset="
+                  ./images/mark-guerrero.jpg    1x,
+                  ./images/mark-guerrero-2x.jpg 2x
+                "
                 src="./images/mark-guerrero.jpg"
                 alt="Mark Guererro picture"
                 width="264"
@@ -177,6 +244,7 @@
             </li>
             <li class="our-team-item">
               <img
+                srcset="./images/tom-ford.jpg 1x, ./images/tom-ford-2x.jpg 2x"
                 src="./images/tom-ford.jpg"
                 alt="Tom Ford picture"
                 width="264"
@@ -219,6 +287,10 @@
             </li>
             <li class="our-team-item">
               <img
+                srcset="
+                  ./images/camilla-garcia.jpg    1x,
+                  ./images/camilla-garcia-2x.jpg 1x
+                "
                 src="./images/camilla-garcia.jpg"
                 alt="Camilla Garcia picture"
                 width="264"
@@ -260,12 +332,10 @@
               </div>
             </li>
             <li class="our-team-item">
-              <img
-                src="./images/daniel-wilson.jpg"
-                alt="Daniel Wilson picture"
-                width="264"
-                height="260"
-              />
+              <img srcset="./images/daniel-wilson.jpg 1x,
+              ./images/daniel-wilson-2x.jpg 2x""
+              src="./images/daniel-wilson.jpg" alt="Daniel Wilson picture"
+              width="264" height="260" />
               <div class="team-card">
                 <h3 class="our-team-item-title">Daniel Wilson</h3>
                 <p class="our-team-item-text">UI Designer</p>
@@ -432,7 +502,7 @@
 
     <!-- FOOTER -->
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="container wrapper">
         <div class="footer-container">
           <a class="logo footer-logo" href="./index.html"
@@ -496,11 +566,11 @@
           </form>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <!-- MODAL -->
 
-    <div class="backdrop is-open">
+    <!-- <div class="backdrop is-open">
       <div class="modal">
         <button type="button" class="modal-btn">
           <svg class="modal-btn-icon" width="8" height="8">
@@ -569,6 +639,6 @@
           <button type="submit" class="modal-form-btn">Send</button>
         </form>
       </div>
-    </div>
+    </div> -->
   </body>
 </html>

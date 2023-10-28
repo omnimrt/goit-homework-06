@@ -45,6 +45,8 @@ li {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -56,9 +58,9 @@ img {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .container {
-  width: 1158px;
-  padding-left: 0;
-  padding-right: 0;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin: 0 auto;
 }
 
@@ -75,7 +77,7 @@ img {
 }
 
 .nav-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
@@ -99,7 +101,7 @@ img {
   width: 100%;
   height: 4px;
   left: 0;
-  background-color: #404bbf;
+  background-color: #2e2f42;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   bottom: -1px;
   border-radius: 2px;
@@ -124,7 +126,7 @@ img {
 }
 
 .address-info-list {
-  display: flex;
+  display: none;
   gap: 40px;
 }
 
@@ -148,6 +150,79 @@ img {
   color: #2e2f42;
 }
 
+/* ========= MOBILE MENU =========== */
+.mob-menu {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 320px;
+  height: 100vh;
+  background-color: #fff;
+  padding: 24px 24px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 1;
+  visibility: hidden;
+}
+
+.menu-close-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 24px;
+}
+
+.mob-list {
+}
+
+.mob-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.mob-link {
+  color: #2e2f42;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.11; /* 111.111% */
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.mob-address-info {
+  color: var(--SLATE, #434455);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2; /* 120% */
+  letter-spacing: 0.02em;
+}
+
+.mob-address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mob-address-item {
+}
+
+.mob-soc-list {
+  display: flex;
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.mob-soc-item {
+}
+
+.mob-soc-link {
+}
+
+.mob-soc-icon {
+}
+
 /* HERO SECTION */
 
 .hero {
@@ -156,24 +231,36 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-office\ 1-min.jpg);
+    url(../images/Dark-bg-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 188px 0;
+  padding: 72px 16px;
   max-width: 1440px;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/Dark-bg-mobile-2x.jpg);
+  }
 }
 
 .hero-title {
   color: #fff;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px;
+  line-height: 1.11;
   letter-spacing: 0.02em;
   max-width: 496px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
   text-align: center;
 }
 
@@ -215,27 +302,32 @@ img {
 }
 
 .feature {
-  padding: 120px 0;
+  padding: 96px 0;
 }
 
 .feature-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .feature-list-item {
-  width: calc((100% - 24px) / 4);
+  /* width: calc((100% - 24px) / 4); */
+  width: 100%;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border-top-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
 
-.feature-list-item .feature-title {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
+.feature-title {
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
+  line-height: 1.11;
   color: #2e2f42;
 }
 
@@ -246,28 +338,21 @@ img {
 .feature-text {
   color: #434455;
   letter-spacing: 0.02em;
+  font-weight: 500;
 }
 
 .icon-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  margin-bottom: 8px;
-  background-color: #f4f4fd;
-  border: 1px solid #8e8f99;
-  height: 112px;
-  border-radius: 4px;
+  display: none;
 }
 /* OUR TEAM SECTION */
 
 .our-team {
   background-color: #f4f4fd;
-  padding: 120px 0;
+  padding: 16px 0;
 }
 
 .team-card {
+  max-width: 100%;
   padding: 32px 0;
   display: flex;
   flex-direction: column;
@@ -276,11 +361,13 @@ img {
 }
 
 .our-team-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.11;
-  letter-spacing: 0.02em;
+  color: var(--NAVY-BLUE, #2e2f42);
   text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.11; /* 111.111% */
+  letter-spacing: 0.02em;
   text-transform: capitalize;
   color: #2e2f42;
   margin-bottom: 72px;
@@ -288,7 +375,8 @@ img {
 
 .our-team-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .our-team-item {
@@ -297,7 +385,8 @@ img {
   flex-direction: column;
   justify-content: center;
   border-radius: 0px 0px 4px 4px;
-  width: calc((100% - 72px) / 4);
+  /* width: calc((100% - 72px) / 4); */
+  width: 100%;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -377,6 +466,7 @@ img {
 
 .portfolio-list {
   display: flex;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   column-gap: 24px;
   row-gap: 48px;
@@ -384,7 +474,7 @@ img {
 }
 
 .portfolio-list-item {
-  width: calc((100% - 48px) / 3);
+  width: 100%;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -769,4 +859,160 @@ img {
   color: #fff;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* @media screen and (min-width: 320px) {
+  .container {
+  }
+} */
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0 auto;
+  }
+
+  .hero-container {
+    padding: 112px 0px 136px;
+  }
+
+  .hero {
+    background-color: #2e2f42;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/Dark-bg-tablet.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/Dark-bg-tablet-2x.jpg);
+    }
+  }
+
+  .hero-title {
+    font-size: 56px;
+  }
+
+  .feature-list {
+    gap: 72px 24px;
+  }
+
+  .feature-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .feature-title {
+    text-align: left;
+  }
+
+  .our-team {
+    padding: 108px;
+  }
+
+  .our-team-list {
+    gap: 64px 24px;
+  }
+
+  .our-team-item {
+    width: calc((100% - 24px) / 2);
+    margin: 0 auto;
+  }
+
+  .portfolio-list {
+    gap: 72px 24px;
+  }
+
+  .portfolio-list-item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-container {
+    padding: 188px 0;
+  }
+
+  .hero {
+    background-color: #2e2f42;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/Dark-bg-desktop.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/Dark-bg-desktop-2x.jpg);
+    }
+  }
+
+  .feature-list {
+    gap: 24px;
+  }
+
+  .feature-list-item {
+    width: calc((100% - 72px) / 4);
+  }
+
+  .feature-title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2; /* 120% */
+    letter-spacing: 0.02em;
+  }
+
+  .feature-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5; /* 150% */
+    letter-spacing: 0.02em;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 8px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    height: 112px;
+    border-radius: 4px;
+  }
+
+  .our-team-list {
+    gap: 24px;
+  }
+
+  .our-team-item {
+    width: calc((100% - 72px) / 4);
+  }
+
+  .portfolio-list-item {
+    width: calc((100% - 48px) / 3);
+  }
 }
