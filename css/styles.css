@@ -631,7 +631,7 @@ img {
   margin-bottom: 16px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  text-align: left;
+  text-align: center;
 }
 
 .footer-form {
@@ -1062,6 +1062,7 @@ img {
   }
 
   .footer-subscribe-text {
+    /* text-align: center; */
   }
 
   .footer-form {
@@ -1082,8 +1083,6 @@ img {
     width: 408px;
     min-height: 584px;
   }
-
-
 }
 
 @media screen and (min-width: 1158px) {
@@ -1205,9 +1204,8 @@ img {
     margin-left: 80px;
   }
 
-   .modal {
+  .modal {
     width: 408px;
     min-height: 584px;
   }
-
-
+}
